@@ -109,3 +109,18 @@ main {
 .btn:hover {
     background-color: #006e8a;
 }
+footer {
+    background-color: rgba(100, 147, 161, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
