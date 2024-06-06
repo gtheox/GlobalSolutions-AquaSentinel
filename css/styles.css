@@ -211,4 +211,23 @@ button {
 button:hover {
     background-color: #006e8a;
 }
+#alerta{
+    font-size: 0.7vw;
+}
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
