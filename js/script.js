@@ -187,7 +187,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var numeroWhatsapp = '5511942160622'; // Substitua pelo número desejado
 
     // Monta a mensagem com as informações do formulário
-    var mensagemWhatsapp = 'Olá, eu sou ' + nome + '. Minha mensagem é: ' + mensagem + '. Meu telefone para contato é: ' + telefone;
+    var mensagemWhatsapp = 'Olá, eu sou ' + nome  +". "+ mensagem + '. Meu telefone para contato é: ' + telefone;
 
     // Cria o link do WhatsApp
     var url = 'https://api.whatsapp.com/send?phone=' + numeroWhatsapp + '&text=' + encodeURIComponent(mensagemWhatsapp);
