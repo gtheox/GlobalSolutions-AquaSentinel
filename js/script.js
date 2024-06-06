@@ -50,3 +50,46 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Descrição:', descricao);
     }
 });
+// Lista de cidades costeiras por estado
+const cidadesPorEstado = {
+    'AP': ['Amapá', 'Calçoene', 'Macapá', 'Oiapoque'],
+    'PA': ['Augusto Corrêa', 'Bragança', 'Chaves', 'Curuçá', 'Maracanã', 'Salinópolis', 'Soure', 'Vigia'],
+    'MA': ['Alcântara', 'Apicum-Açu', 'Bacuri', 'Barreirinhas', 'Bequimão', 'Cândido Mendes', 'Carutapera', 'Cedral', 'Cururupu', 'Guimarães', 'Humberto de Campos', 'Icatu', 'Paulino Neves', 'Primeira Cruz', 'Raposa', 'Santo Amaro do Maranhão', 'São José de Ribamar', 'São Luís', 'Tutóia'],
+    'PI': ['Cajueiro da Praia', 'Ilha Grande', 'Luís Correia', 'Parnaíba'],
+    'CE': ['Acaraú', 'Amontada', 'Aquiraz', 'Aracati', 'Barroquinha', 'Beberibe', 'Camocim', 'Cascavel', 'Caucaia', 'Chaval', 'Cruz', 'Fortim', 'Fortaleza', 'Icapuí', 'Itapipoca', 'Itarema', 'Jijoca de Jericoacoara', 'Paraipaba', 'Paracuru', 'São Gonçalo do Amarante', 'Trairi', 'Tururu'],
+    'RN': ['Areia Branca', 'Baía Formosa', 'Canguaretama', 'Extremoz', 'Galinhos', 'Grossos', 'Macau', 'Maxaranguape', 'Natal', 'Nísia Floresta', 'Parnamirim', 'Porto do Mangue', 'Rio do Fogo', 'São Miguel do Gostoso', 'Tibau', 'Tibau do Sul', 'Touros'],
+    'PB': ['Alhandra', 'Baía da Traição', 'Cabedelo', 'Conde', 'João Pessoa', 'Lucena', 'Mataraca', 'Pitimbu'],
+    'PE': ['Abreu e Lima', 'Barra de Jangada', 'Cabo de Santo Agostinho', 'Fernando de Noronha', 'Goiana', 'Ipojuca', 'Itamaracá', 'Itapissuma', 'Jaboatão dos Guararapes', 'Olinda', 'Paulista', 'Recife', 'Rio Formoso', 'São José da Coroa Grande', 'Sirinhaém', 'Tamandaré'],
+    'AL': ['Barra de Santo Antônio', 'Barra de São Miguel', 'Coruripe', 'Feliz Deserto', 'Jequiá da Praia', 'Japaratinga', 'Maceió', 'Maragogi', 'Marechal Deodoro', 'Paripueira', 'Piaçabuçu', 'Porto Calvo', 'Porto de Pedras', 'Roteiro', 'São Miguel dos Milagres'],
+    'SE': ['Aracaju', 'Barra dos Coqueiros', 'Brejo Grande', 'Estância', 'Indiaroba', 'Itaporanga d\'Ajuda', 'Pacatuba', 'Pirambu'],
+    'BA': ['Alcobaça', 'Belmonte', 'Cairu', 'Camaçari', 'Camamu', 'Canavieiras', 'Caravelas', 'Conde', 'Entre Rios', 'Esplanada', 'Ilhéus', 'Itacaré', 'Itaparica', 'Jaguaripe', 'Jandaíra', 'Lauro de Freitas', 'Madre de Deus', 'Maraú', 'Mata de São João', 'Mucuri', 'Nova Viçosa', 'Porto Seguro', 'Prado', 'Salvador', 'Santa Cruz Cabrália', 'São Francisco do Conde', 'São Sebastião do Passé', 'Taperoá', 'Valença', 'Vera Cruz'],
+    'ES': ['Anchieta', 'Aracruz', 'Guarapari', 'Itapemirim', 'Linhares', 'Marataízes', 'Piúma', 'Presidente Kennedy', 'Serra', 'São Mateus', 'Vila Velha', 'Vitória'],
+    'RJ': ['Angra dos Reis', 'Araruama', 'Armação dos Búzios', 'Arraial do Cabo', 'Cabo Frio', 'Campos dos Goytacazes', 'Carapebus', 'Casimiro de Abreu', 'Iguaba Grande', 'Itaguaí', 'Macaé', 'Mangaratiba', 'Maricá', 'Niterói', 'Paraty', 'Quissamã', 'Rio das Ostras', 'Rio de Janeiro', 'São Gonçalo', 'Saquarema', 'São João da Barra', 'São Pedro da Aldeia'],
+    'SP': ['Bertioga', 'Cananéia', 'Caraguatatuba', 'Cubatão', 'Guarujá', 'Iguape', 'Ilhabela', 'Itanhaém', 'Mongaguá', 'Peruíbe', 'Praia Grande', 'Santos', 'São Sebastião', 'São Vicente', 'Ubatuba'],
+    'PR': ['Antonina', 'Guaraqueçaba', 'Guaratuba', 'Matinhos', 'Morretes', 'Paranaguá', 'Pontal do Paraná'],
+    'SC': ['Araquari', 'Balneário Camboriú', 'Balneário Barra do Sul', 'Barra Velha', 'Biguaçu', 'Bombinhas', 'Camboriú', 'Garopaba', 'Governador Celso Ramos', 'Içara', 'Imbituba', 'Itajaí', 'Itapema', 'Jaguaruna', 'Laguna', 'Navegantes', 'Palhoça', 'Passo de Torres', 'Penha', 'Piçarras', 'Porto Belo', 'São Francisco do Sul', 'São José', 'Tijucas', 'Tubarão', 'Balneário Rincão'],
+    'RS': ['Arroio do Sal', 'Balneário Pinhal', 'Capão da Canoa', 'Capivari do Sul', 'Cidreira', 'Imbé', 'Mostardas', 'Osório', 'Palmares do Sul', 'Rio Grande', 'Santo Antônio da Patrulha', 'São José do Norte', 'Tavares', 'Torres', 'Tramandaí', 'Xangri-lá']
+
+};
+
+function popularCidades() {
+const estadoSelect = document.getElementById('estado');
+const cidadeSelect = document.getElementById('cidade');
+const estadoSelecionado = estadoSelect.value;
+
+// Limpa as opções existentes
+cidadeSelect.innerHTML = '<option value="">Selecione a cidade</option>';
+
+// Verifica se um estado foi selecionado
+if (estadoSelecionado !== '') {
+    // Popula o campo de cidades com as cidades correspondentes ao estado selecionado
+    const cidades = cidadesPorEstado[estadoSelecionado];
+    cidades.forEach(cidade => {
+        const option = document.createElement('option');
+        option.value = cidade;
+        option.text = cidade;
+        cidadeSelect.appendChild(option);
+    });
+}
+}
+
