@@ -26,43 +26,108 @@
         <h1>Fazer Denúncia</h1>
       </div>
     </header>
-    <main> 
-       <div class="container form-container"> 
-            <form id="reportForm" action="#"> 
-             <div class="form-group"> 
-                <label for="nome">Nome:</label> 
-                <input type="text" id="nome" name="nome" required /> 
-        </div> 
-        <div class="form-group"> 
-            <label for="email">E-mail:</label> 
-            <input type="email" id="email" name="email" required /> 
-        </div> 
-        <div class="form-group"> 
-            <label for="telefone">Telefone:</label> 
-            <input type="tel" id="telefone" name="telefone" required /> 
-        </div> 
-        <div class="form-group"> 
-            <label for="estado">Estado:</label> 
-            <select id="estado" name="estado" required onchange="popularCidades()"> 
-                <option value="" disabled selected>Selecione o estado</option> 
-                <option value="AP">Amapá</option> 
-                <option value="PA">Pará</option> 
-                <option value="MA">Maranhão</option> 
-                <option value="PI">Piauí</option> 
-                <option value="CE">Ceará</option> 
-                <option value="RN">Rio Grande do Norte</option> 
-                <option value="PB">Paraíba</option> 
-                <option value="PE">Pernambuco</option> 
-                <option value="AL">Alagoas</option> 
-                <option value="SE">Sergipe</option> 
-                <option value="BA">Bahia</option> 
-                <option value="ES">Espírito Santo</option> 
-                <option value="RJ">Rio de Janeiro</option> 
-                <option value="SP">São Paulo</option> 
-                <option value="PR">Paraná</option> 
-                <option value="SC">Santa Catarina</option> 
-                <option value="RS">Rio Grande do Sul</option> 
-        </select> 
-        </div> 
+    <main>
+      <div class="container form-container">
+        <form id="reportForm" action="#">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required />
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select
+              id="estado"
+              name="estado"
+              required
+              onchange="popularCidades()"
+            >
+              <option value="" disabled selected>Selecione o estado</option>
+              <option value="AP">Amapá</option>
+              <option value="PA">Pará</option>
+              <option value="MA">Maranhão</option>
+              <option value="PI">Piauí</option>
+              <option value="CE">Ceará</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="PB">Paraíba</option>
+              <option value="PE">Pernambuco</option>
+              <option value="AL">Alagoas</option>
+              <option value="SE">Sergipe</option>
+              <option value="BA">Bahia</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="SP">São Paulo</option>
+              <option value="PR">Paraná</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="RS">Rio Grande do Sul</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cidade">Cidade:</label>
+
+            <select id="cidade" name="cidade" required>
+              <option value="" disabled selected>
+                Selecione o estado primeiro
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="coordenadas">Coordenadas:</label>
+
+            <p id="alerta">
+              Para descobrir suas coordenadas, acesse a aba
+              <a href="./mapa.html">Sua localização</a>.
+            </p>
+
+            <input type="text" id="coordenadas" name="coordenadas" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tipo-problema">Tipo de Problema:</label>
+
+            <select id="tipo-problema" name="tipo-problema" required>
+              <option value="" disabled selected>
+                Selecione o tipo de problema
+              </option>
+
+              <option value="mancha-oleo">Mancha de óleo</option>
+
+              <option value="lixo">Lixo</option>
+
+              <option value="derramamento-petroleo">
+                Derramamento de petróleo
+              </option>
+
+              <option value="poluicao">Poluição</option>
+
+              <option value="plastico">Plástico</option>
+
+              <option value="pesca-ilegal">Pesca ilegal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="descricao">Descrição da Denúncia:</label>
+
+            <textarea
+              id="descricao"
+              name="descricao"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Enviar Denúncia</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
