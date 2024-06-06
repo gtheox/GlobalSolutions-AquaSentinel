@@ -131,4 +131,20 @@ function copyCoordinates() {
         alert('Erro ao copiar coordenadas: ', err);
     });
 }
+window.watsonAssistantChatOptions = {
+    integrationID: "ca575cf0-19f7-4cfb-8a4f-40899f2b04ce", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "298f15d9-35ac-4698-9cb5-5613e62e70fa", // The ID of your service instance.
+    onLoad: async (instance) => {
+      await instance.render();
+    },
+  };
+  setTimeout(function () {
+    const t = document.createElement("script");
+    t.src =
+      "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+      (window.watsonAssistantChatOptions.clientVersion || "latest") +
+      "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
 
