@@ -1,50 +1,50 @@
-<!DOCTYPE html> 
-<html lang="pt-BR"> 
-    <head> 
-        <meta charset="UTF-8" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-        <title>Rastrear Denúncia</title> 
-        <link rel="stylesheet" href="../css/styles.css" /> 
-        <script src="../js/script.js"></script> 
-    </head> 
-    <body>
-        <div class="content-wrap"> 
-            <header> 
-                <nav class="navbar"> 
-                    <div class="container"> 
-                        <ul> 
-                            <li><a href="../index.html">Home</a></li> 
-                            <li><a href="./report.html">Fazer Denúncia</a></li> 
-                            <li><a href="./mapa.html">Sua localização</a></li> 
-                            <li><a href="./rastreio.html">Rastrear Denúncia</a></li> 
-                        </ul> 
-                    </div> 
-                </nav> 
-                <div class="container"> 
-                    <h1>Rastrear Denúncia</h1> 
-                </div> 
-            </header>
-            <main> 
-                <div class="container form-container"> 
-                    <form id="rastreioForm" onsubmit="return validarRastreio()"> 
-                        <div class="form-group"> 
-                            <label for="codigo-rastreamento">Código de Rastreamento:</label> 
-                            <input type="text" id="codigo-rastreamento" name="codigo-rastreamento" required /> 
-                        </div> 
-                        <button type="submit">Rastrear</button> 
-                    </form> 
-                    <div id="resultado"></div> 
-                </div> 
-            </main> 
-        </div> 
-        <footer> 
-            <div class="container"> 
-                <p>&copy; 2024 AquaSentinel. Todos os direitos reservados.</p> 
-                <div class="contact"> 
-                    <p>Entre em contato: contato@aqua-sentinel.com</p> 
-                    <p>Telefone: (XX) XXXX-XXXX</p> 
-                </div> 
-            </div> 
-        </footer> 
-    </body> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rastrear Denúncia</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="content-wrap">
+      <header>
+        <nav class="navbar">
+          <div class="container">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="./report.html">Fazer Denúncia</a></li>
+              <li><a href="./mapa.html">Sua localização</a></li>
+              <li><a href="./rastreio.html">Rastrear Denúncia</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container">
+          <h1>Rastrear Denúncia</h1>
+        </div>
+      </header>
+      <main>
+        <div class="container form-container">
+          <form id="rastreioForm" onsubmit="return validarRastreio()">
+            <div class="form-group">
+              <label for="codigo-rastreamento">Código de Rastreamento:</label>
+              <input type="text" id="codigo-rastreamento" name="codigo-rastreamento" required />
+            </div>
+            <button type="submit">Rastrear</button>
+          </form>
+          <div id="resultado"></div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 AquaSentinel. Todos os direitos reservados.</p>
+        <div class="contact">
+          <p>Entre em contato: contato@aqua-sentinel.com</p>
+          <p>Telefone: (XX) XXXX-XXXX</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
