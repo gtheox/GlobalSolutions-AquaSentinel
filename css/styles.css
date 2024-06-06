@@ -157,6 +157,7 @@ footer .container {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    resize: none;
 }
 
 button[type="submit"] {
@@ -231,3 +232,36 @@ html, body {
 main {
     flex: 1;
 }
+.container-img {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  .team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+  }
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .team-member p {
+    font-size: 1.2vw;
+    color: #fff;
+  }
+  .button-container {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .button-container a {
+    text-decoration: none;
+    background-color: #009fa5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }

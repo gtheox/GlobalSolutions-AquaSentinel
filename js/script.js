@@ -175,4 +175,23 @@ window.watsonAssistantChatOptions = {
         resultadoDiv.innerHTML = 'Status da denúncia: ' + status;
     }
 });
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+    
+    // Pega os valores do formulário
+    var nome = document.getElementById('nome').value;
+    var telefone = document.getElementById('telefone').value;
+    var mensagem = document.getElementById('mensagem').value;
 
+    // Número do telefone para o qual enviar a mensagem (inclua o código do país)
+    var numeroWhatsapp = '5511942160622'; // Substitua pelo número desejado
+
+    // Monta a mensagem com as informações do formulário
+    var mensagemWhatsapp = 'Olá, eu sou ' + nome + '. Minha mensagem é: ' + mensagem + '. Meu telefone para contato é: ' + telefone;
+
+    // Cria o link do WhatsApp
+    var url = 'https://api.whatsapp.com/send?phone=' + numeroWhatsapp + '&text=' + encodeURIComponent(mensagemWhatsapp);
+
+    // Redireciona para a conversa no WhatsApp em uma nova guia
+    window.open(url, '_blank');
+});
