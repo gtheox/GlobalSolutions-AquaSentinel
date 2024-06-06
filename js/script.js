@@ -112,7 +112,7 @@ function initMap() {
             handleLocationError(true, map.getCenter());
         });
     } else {
-        // Browser doesn't support Geolocation
+         
         handleLocationError(false, map.getCenter());
     }
 }
@@ -132,9 +132,9 @@ function copyCoordinates() {
     });
 }
 window.watsonAssistantChatOptions = {
-    integrationID: "ca575cf0-19f7-4cfb-8a4f-40899f2b04ce", // The ID of this integration.
-    region: "us-south", // The region your integration is hosted in.
-    serviceInstanceID: "298f15d9-35ac-4698-9cb5-5613e62e70fa", // The ID of your service instance.
+    integrationID: "ca575cf0-19f7-4cfb-8a4f-40899f2b04ce", 
+    region: "us-south", 
+    serviceInstanceID: "298f15d9-35ac-4698-9cb5-5613e62e70fa", 
     onLoad: async (instance) => {
       await instance.render();
     },
@@ -183,8 +183,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var telefone = document.getElementById('telefone').value;
     var mensagem = document.getElementById('mensagem').value;
 
-    // Número do telefone para o qual enviar a mensagem (inclua o código do país)
-    var numeroWhatsapp = '5511942160622'; // Substitua pelo número desejado
+    // Número do telefone para o qual enviar a mensagem 
+    var numeroWhatsapp = '5511942160622'; 
 
     // Monta a mensagem com as informações do formulário
     var mensagemWhatsapp = 'Olá, eu sou ' + nome  +". "+ mensagem + '. Meu telefone para contato é: ' + telefone;
