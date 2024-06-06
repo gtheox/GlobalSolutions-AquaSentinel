@@ -147,4 +147,32 @@ window.watsonAssistantChatOptions = {
       "/WatsonAssistantChatEntry.js";
     document.head.appendChild(t);
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    const rastreioForm = document.getElementById('rastreioForm');
+
+    rastreioForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita o envio do formulário por padrão
+
+        // Coletar o valor do campo de rastreamento
+        const codigoRastreamento = document.getElementById('codigo-rastreamento').value.trim();
+
+        // Validar o campo
+        if (codigoRastreamento === '') {
+            alert('Por favor, insira o código de rastreamento.');
+            return;
+        }
+
+        // Buscar status da denúncia (simulação)
+        buscarStatusDenuncia(codigoRastreamento);
+    });
+
+    function buscarStatusDenuncia(codigoRastreamento) {
+        // Simulação de busca de status
+        const status = 'Recebido'; // Aqui você buscaria o status no banco de dados
+
+        // Exibir o resultado
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = 'Status da denúncia: ' + status;
+    }
+});
 
